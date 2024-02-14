@@ -1,1 +1,1 @@
-904242
+904242 # the 6 last digits of the offer id
