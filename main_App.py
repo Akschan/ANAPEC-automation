@@ -242,7 +242,6 @@ class App(customtkinter.CTk):
         self.logo_labels.configure(text="Checking offers")
 
         for word in range(len(links)):
-            self.logo_labels.configure(text=f"Checking offre {word}......")
             nlp = spacy.load("fr_core_news_sm")#spaCy French model 
             doc = nlp(links[word].lower()) # Process the input links using spaCy
 
@@ -273,12 +272,10 @@ class App(customtkinter.CTk):
 
             if response.status_code == 200:
                 self.logo_labels.configure(text='Submitted successfully')
-                self.enable()
             else:
                 self.logo_labels.configure(text='Failed to submit')
-                self.enable()
-            self.enable()
-            self.stop.set()
+        self.enable()
+        self.stop.set()
 
     
 
